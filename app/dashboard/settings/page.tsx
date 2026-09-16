@@ -1,5 +1,4 @@
-﻿
-import Link from "next/link";
+﻿import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import LogoutButton from "@/components/auth/LogoutButton";
@@ -7,8 +6,6 @@ import UserMenu from "@/components/auth/UserMenu";
 import ChangePasswordForm from "@/components/setting/ChangePasswordForm";
 import ProfileForm from "@/components/setting/ProfileForm";
 import NotificationPreferences from "@/components/setting/NotificationPreferences";
-
-
 
 export default async function SettingsPage() {
     const user = await getCurrentUser();
@@ -50,7 +47,7 @@ export default async function SettingsPage() {
                                 href="/dashboard"
                                 className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-slate-400 transition hover:bg-white/5 hover:text-white"
                             >
-                                <span className="text-base">âŒ‚</span>
+                                <span className="text-base">⌂</span>
                                 Dashboard
                             </Link>
 
@@ -58,7 +55,7 @@ export default async function SettingsPage() {
                                 href="/dashboard/projects"
                                 className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-slate-400 transition hover:bg-white/5 hover:text-white"
                             >
-                                <span className="text-base">â–£</span>
+                                <span className="text-base">▣</span>
                                 Projects
                             </Link>
 
@@ -66,7 +63,7 @@ export default async function SettingsPage() {
                                 href="/dashboard/tasks"
                                 className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-slate-400 transition hover:bg-white/5 hover:text-white"
                             >
-                                <span className="text-base">âœ“</span>
+                                <span className="text-base">✓</span>
                                 Tasks
                             </Link>
 
@@ -74,7 +71,7 @@ export default async function SettingsPage() {
                                 href="/dashboard/settings"
                                 className="flex items-center gap-3 rounded-xl bg-blue-600 px-4 py-3 text-sm font-medium"
                             >
-                                <span className="text-base">âš™</span>
+                                <span className="text-base">⚙</span>
                                 Settings
                             </Link>
                         </nav>
@@ -116,7 +113,6 @@ export default async function SettingsPage() {
                         </div>
 
                         <div className="flex items-center gap-3">
-
                             <UserMenu
                                 name={user.name}
                                 email={user.email}
@@ -145,7 +141,7 @@ export default async function SettingsPage() {
                                 <div className="border-b border-white/10 px-6 py-5">
                                     <div className="flex items-center gap-3">
                                         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-lg text-blue-400">
-                                            ðŸ‘¤
+                                            👤
                                         </div>
 
                                         <div>
@@ -182,14 +178,13 @@ export default async function SettingsPage() {
                                             </p>
                                         </div>
                                     </div>
+
                                     <div className="mt-8">
                                         <ProfileForm
                                             initialName={user.name}
                                             initialEmail={user.email}
                                         />
                                     </div>
-
-
                                 </div>
                             </section>
 
@@ -198,7 +193,7 @@ export default async function SettingsPage() {
                                 <div className="border-b border-white/10 px-6 py-5">
                                     <div className="flex items-center gap-3">
                                         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-lg text-emerald-400">
-                                            ðŸ”’
+                                            🔒
                                         </div>
 
                                         <div>
@@ -257,7 +252,7 @@ export default async function SettingsPage() {
                                 <div className="border-b border-white/10 px-6 py-5">
                                     <div className="flex items-center gap-3">
                                         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-500/10 text-lg text-purple-400">
-                                            ðŸ””
+                                            🔔
                                         </div>
 
                                         <div>
@@ -273,44 +268,6 @@ export default async function SettingsPage() {
                                 </div>
 
                                 <NotificationPreferences />
-
-                                        <div className="flex h-6 w-11 shrink-0 items-center rounded-full bg-blue-600 p-1">
-                                            <div className="ml-auto h-4 w-4 rounded-full bg-white" />
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-center justify-between gap-4 px-6 py-5">
-                                        <div>
-                                            <h4 className="text-sm font-medium">
-                                                Project Activity
-                                            </h4>
-
-                                            <p className="mt-1 text-xs text-slate-500">
-                                                Get updates about project activity.
-                                            </p>
-                                        </div>
-
-                                        <div className="flex h-6 w-11 shrink-0 items-center rounded-full bg-slate-700 p-1">
-                                            <div className="h-4 w-4 rounded-full bg-slate-400" />
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-center justify-between gap-4 px-6 py-5">
-                                        <div>
-                                            <h4 className="text-sm font-medium">
-                                                Email Notifications
-                                            </h4>
-
-                                            <p className="mt-1 text-xs text-slate-500">
-                                                Receive important account notifications by email.
-                                            </p>
-                                        </div>
-
-                                        <div className="flex h-6 w-11 shrink-0 items-center rounded-full bg-blue-600 p-1">
-                                            <div className="ml-auto h-4 w-4 rounded-full bg-white" />
-                                        </div>
-                                    </div>
-                                </div>
                             </section>
 
                             {/* Danger Zone */}
@@ -318,7 +275,7 @@ export default async function SettingsPage() {
                                 <div className="border-b border-red-500/10 px-6 py-5">
                                     <div className="flex items-center gap-3">
                                         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-500/10 text-lg text-red-400">
-                                            âš 
+                                            ⚠
                                         </div>
 
                                         <div>
@@ -355,7 +312,7 @@ export default async function SettingsPage() {
 
                         {/* Footer */}
                         <div className="py-8 text-center text-xs text-slate-600">
-                            TaskFlow â€¢ Account Settings
+                            TaskFlow • Account Settings
                         </div>
                     </div>
                 </section>
@@ -363,7 +320,3 @@ export default async function SettingsPage() {
         </main>
     );
 }
-
-
-
-
