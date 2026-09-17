@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -119,4 +120,3 @@ model Notification {
   @@index([userId, isRead])
   @@index([userId, createdAt])
 }
-
